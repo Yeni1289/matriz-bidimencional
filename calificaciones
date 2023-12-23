@@ -1,0 +1,49 @@
+import javax.swing.JOptionPane;
+//*aut@r yeni1289
+
+public class Calificaciones {
+    public static void main(String[] args) {
+        int x, u, m;
+        double Promedio, Promedio2 = 0;
+        double[][] calificacion = new double[6][6];
+
+        // Encabezados
+        String Unidad[] = {" ", "  U1 ", " U2", "  U3 ", " U4", "  U5 ", "   Promedio"};
+
+        for (x = 0; x < 7; x++) {
+            System.out.print(Unidad[x] + " ");
+        }
+        System.out.println();
+
+        String Materia[] = {"Mat", "Cal", "Des", "Fdp", "Fdi", "Qui"};
+        System.out.println("---------------------------------------");
+
+        // Matriz
+        for (m = 0; m < 6; m++) {
+            System.out.print(Materia[m] + "|");
+
+            double total = 0;
+
+            for (u = 1; u < 6; u++) {
+                int Calificacion = Integer.parseInt(JOptionPane.showInputDialog("Ingresa la calificacion para " + Materia[m] + " unidad " + u));
+                System.out.print(Calificacion + "   ");
+                calificacion[m][u] = Calificacion;
+                total += Calificacion;
+            }
+
+            // Calcular promedio
+            Promedio = total / 5;
+
+            System.out.println(" = " + Promedio);
+
+            // Acumular la suma de los promedios
+            Promedio2 += Promedio;
+        }
+
+        // Calcular el promedio final de promedios
+        Promedio2 /= 6;
+        System.out.println("---------------------------------------");
+        System.out.print("      " + "Promedio Final : " + Promedio2);
+    }
+}
+
