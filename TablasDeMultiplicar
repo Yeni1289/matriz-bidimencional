@@ -1,0 +1,24 @@
+public class TablasDeMultiplicar {
+    public static void main(String[] args) {
+        // Tamaño del cuadrado
+        int size = 10;
+
+        // Crear la matriz bidimensional
+        int[][] tablaMultiplicar = new int[size][size];
+
+        // Llenar la matriz con las tablas de multiplicar
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                tablaMultiplicar[i][j] = (i + 1) * (j + 1);
+            }
+        }
+
+        // Imprimir la matriz en forma de cuadrado
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.printf("%4d", tablaMultiplicar[i][j]); // Ajustar el ancho de impresión
+            }
+            System.out.println(); // Nueva línea para la siguiente fila
+        }
+    }
+}
